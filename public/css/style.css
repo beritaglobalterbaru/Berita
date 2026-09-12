@@ -979,42 +979,58 @@ textarea {
   display: none;
 }
 
+.detail-container {
+  padding: 24px 18px 80px;
+  max-width: 720px;
+}
+
+@media (min-width: 768px) {
+  .detail-container {
+    padding: 32px 24px 60px;
+    max-width: 760px;
+  }
+}
+
 .article-header {
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 
 .article-badge {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .article-title {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 800;
-  line-height: 1.28;
-  margin-bottom: 12px;
-  letter-spacing: -0.02em;
+  line-height: 1.4;
+  margin-bottom: 14px;
+  letter-spacing: -0.015em;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 @media (min-width: 768px) {
   .article-title {
-    font-size: 2rem;
+    font-size: 1.85rem;
+    line-height: 1.35;
   }
 }
 
 .article-meta {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px 16px;
-  font-size: 0.88rem;
+  gap: 8px 14px;
+  font-size: 0.85rem;
   color: var(--text-muted);
-  margin-bottom: 18px;
+  margin-bottom: 20px;
   font-weight: 500;
+  line-height: 1.5;
 }
 
 .article-image {
   border-radius: 14px;
   overflow: hidden;
-  margin-bottom: 24px;
+  margin-bottom: 28px;
   background: var(--border);
   max-height: 440px;
   box-shadow: var(--shadow);
@@ -1028,13 +1044,20 @@ textarea {
 }
 
 .article-body {
-  font-size: 1.05rem;
-  line-height: 1.8;
+  font-size: 1.0625rem;
+  line-height: 1.85;
   color: var(--text);
+  letter-spacing: 0.01em;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .article-body p {
-  margin-bottom: 1.15em;
+  margin-bottom: 1.35em;
+}
+
+.article-body p:last-child {
+  margin-bottom: 0;
 }
 
 .article-body strong {
@@ -1042,18 +1065,20 @@ textarea {
 }
 
 .article-source {
-  margin-top: 28px;
-  padding: 14px 16px;
+  margin-top: 32px;
+  padding: 16px 18px;
   background: var(--bg);
-  border-radius: 10px;
+  border-radius: 12px;
   font-size: 0.9rem;
   color: var(--text-secondary);
   border: 1px solid var(--border);
+  line-height: 1.5;
 }
 
 .article-source a {
   color: var(--primary);
   font-weight: 600;
+  word-break: break-all;
 }
 
 .btn-back {
@@ -1321,11 +1346,17 @@ textarea {
 .site-footer {
   background: var(--bg-header);
   border-top: 1px solid var(--border);
-  padding: 36px 0 28px;
+  padding: 36px 0 96px;
   margin-top: auto;
   text-align: center;
   color: var(--text-muted);
   font-size: 0.85rem;
+}
+
+@media (min-width: 768px) {
+  .site-footer {
+    padding-bottom: 40px;
+  }
 }
 
 .footer-inner {
