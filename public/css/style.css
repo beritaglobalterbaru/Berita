@@ -1203,3 +1203,292 @@ textarea {
     height: 44px;
   }
 }
+
+/* ---------- About text ---------- */
+.about-text {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+.about-note {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 10px;
+}
+
+/* ---------- Social links (sidebar) ---------- */
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 14px;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #fff;
+  transition: transform var(--transition), box-shadow var(--transition), opacity var(--transition);
+}
+
+.social-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  opacity: 0.95;
+}
+
+.social-btn:active {
+  transform: translateY(0);
+}
+
+.social-icon {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.social-tiktok { background: linear-gradient(135deg, #010101 0%, #25f4ee 50%, #fe2c55 100%); }
+.social-ig { background: linear-gradient(135deg, #f58529 0%, #dd2a7b 50%, #8134af 100%); }
+.social-fb { background: linear-gradient(135deg, #1877f2 0%, #0d65d9 100%); }
+.social-x { background: linear-gradient(135deg, #14171a 0%, #000 100%); }
+.social-yt { background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%); }
+.social-web { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); }
+
+[data-theme="dark"] .social-x {
+  background: linear-gradient(135deg, #333 0%, #111 100%);
+  border: 1px solid #444;
+}
+
+/* ---------- WhatsApp button ---------- */
+.sidebar-wa .wa-desc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 13px 18px;
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  color: #fff !important;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 0.92rem;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.btn-whatsapp:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+}
+
+.btn-whatsapp:active {
+  transform: translateY(0);
+}
+
+.wa-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.btn-whatsapp-footer {
+  width: auto;
+  padding: 12px 22px;
+  font-size: 0.88rem;
+}
+
+/* ---------- Footer enhanced ---------- */
+.site-footer {
+  background: var(--bg-header);
+  border-top: 1px solid var(--border);
+  padding: 36px 0 28px;
+  margin-top: auto;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+}
+
+.footer-brand .logo {
+  justify-content: center;
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.footer-tagline {
+  max-width: 420px;
+  line-height: 1.55;
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+}
+
+.footer-social-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.footer-social-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.footer-soc {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.footer-soc:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: var(--shadow-md);
+}
+
+.footer-tiktok { background: #010101; }
+.footer-ig { background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af); }
+.footer-fb { background: #1877f2; }
+.footer-x { background: #000; }
+.footer-yt { background: #ff0000; }
+.footer-web { background: var(--primary); }
+
+[data-theme="dark"] .footer-tiktok,
+[data-theme="dark"] .footer-x {
+  background: #1e293b;
+  border: 1px solid #334155;
+}
+
+.footer-copy {
+  margin-top: 4px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* ---------- Floating WhatsApp ---------- */
+.wa-float {
+  position: fixed;
+  bottom: 22px;
+  right: 18px;
+  z-index: 999;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+}
+
+.wa-float:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 28px rgba(37, 211, 102, 0.6);
+}
+
+.wa-float:active {
+  transform: scale(0.96);
+}
+
+.wa-float-pulse {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid #25d366;
+  animation: wa-pulse 2s ease-out infinite;
+  pointer-events: none;
+}
+
+@keyframes wa-pulse {
+  0% { transform: scale(1); opacity: 0.7; }
+  70% { transform: scale(1.35); opacity: 0; }
+  100% { transform: scale(1.35); opacity: 0; }
+}
+
+.wa-float-label {
+  position: absolute;
+  right: 68px;
+  background: #111827;
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 7px 12px;
+  border-radius: 8px;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(8px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+  box-shadow: var(--shadow);
+}
+
+.wa-float-label::after {
+  content: '';
+  position: absolute;
+  right: -5px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 5px solid transparent;
+  border-left-color: #111827;
+}
+
+.wa-float:hover .wa-float-label {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (max-width: 480px) {
+  .wa-float {
+    bottom: 18px;
+    right: 14px;
+    width: 56px;
+    height: 56px;
+  }
+  .wa-float-label {
+    display: none;
+  }
+}
+
+@supports (padding: max(0px)) {
+  .wa-float {
+    bottom: max(22px, env(safe-area-inset-bottom));
+    right: max(18px, env(safe-area-inset-right));
+  }
+}
