@@ -1,0 +1,25 @@
+{
+  "name": "berita-global-terbaru",
+  "version": "1.0.0",
+  "description": "Portal berita profesional Berita Global Terbaru - informasi terkini, terpercaya, dan beragam dari Indonesia hingga dunia.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "berita",
+    "news",
+    "portal",
+    "express",
+    "vercel"
+  ],
+  "author": "Berita Global Terbaru",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

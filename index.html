@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Berita Global Terbaru — Berita Terkini Indonesia & Dunia</title>
+  <meta name="description" content="Sajikan informasi terkini, terpercaya, dan beragam dari Indonesia hingga dunia. Portal berita profesional Berita Global Terbaru.">
+  <meta name="keywords" content="berita, berita terkini, berita indonesia, berita dunia, nasional, internasional, teknologi, olahraga">
+  <meta name="author" content="Berita Global Terbaru">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Berita Global Terbaru — Berita Terkini Indonesia & Dunia">
+  <meta property="og:description" content="Sajikan informasi terkini, terpercaya, dan beragam dari Indonesia hingga dunia.">
+  <meta property="og:url" content="/">
+  <meta property="og:site_name" content="Berita Global Terbaru">
+  <meta property="og:locale" content="id_ID">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Berita Global Terbaru">
+  <meta name="twitter:description" content="Sajikan informasi terkini, terpercaya, dan beragam dari Indonesia hingga dunia.">
+
+  <!-- Favicon placeholder -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📰</text></svg>">
+
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="logo" id="logo-home">
+        <span class="logo-icon">B</span>
+        <span>Berita Global Terbaru</span>
+      </a>
+
+      <nav class="nav-desktop" aria-label="Navigasi utama">
+        <a href="/" class="active">Home</a>
+        <a href="#nasional">Nasional</a>
+        <a href="#internasional">Internasional</a>
+        <a href="#politik">Politik</a>
+        <a href="#ekonomi">Ekonomi</a>
+        <a href="#teknologi">Teknologi</a>
+        <a href="#olahraga">Olahraga</a>
+        <a href="#kesehatan">Kesehatan</a>
+        <a href="#lifestyle">Lifestyle</a>
+        <a href="#sains">Sains</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="btn-icon" id="search-toggle" aria-label="Cari berita" title="Cari">🔍</button>
+        <button class="btn-icon" id="theme-toggle" aria-label="Dark Mode" title="Toggle tema">🌙</button>
+        <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <nav class="mobile-menu" id="mobile-menu" aria-label="Menu mobile">
+      <a href="/" class="active">Home</a>
+      <a href="#nasional">Nasional</a>
+      <a href="#internasional">Internasional</a>
+      <a href="#politik">Politik</a>
+      <a href="#ekonomi">Ekonomi</a>
+      <a href="#teknologi">Teknologi</a>
+      <a href="#olahraga">Olahraga</a>
+      <a href="#kesehatan">Kesehatan</a>
+      <a href="#lifestyle">Lifestyle</a>
+      <a href="#pendidikan">Pendidikan</a>
+      <a href="#sains">Sains</a>
+    </nav>
+
+    <!-- Search bar -->
+    <div class="search-bar" id="search-bar">
+      <div class="search-wrapper">
+        <input type="search" id="search-input" placeholder="Cari berita... (judul, kategori, penulis)" autocomplete="off" aria-label="Cari berita">
+        <button class="clear-search" id="clear-search" aria-label="Hapus pencarian">✕</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breaking News -->
+  <div class="breaking-news" aria-label="Breaking news">
+    <div class="breaking-label">🚨 BREAKING</div>
+    <div class="ticker-wrap">
+      <div class="ticker" id="ticker"></div>
+    </div>
+  </div>
+
+  <!-- Home View -->
+  <div id="home-view">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container" id="hero-section">
+        <!-- Filled by JS -->
+      </div>
+    </section>
+
+    <!-- Main -->
+    <main class="main-content">
+      <div class="container layout">
+        <!-- Content column -->
+        <div class="content-col">
+          <div class="controls" id="berita-terbaru">
+            <h2 class="section-title">📰 Berita Terbaru</h2>
+
+            <div class="category-filters" id="category-filters">
+              <!-- Filled by JS -->
+            </div>
+
+            <div class="sort-row">
+              <p class="results-info" id="results-info">Memuat berita...</p>
+              <select class="sort-select" id="sort-select" aria-label="Urutkan berita">
+                <option value="terbaru">Terbaru</option>
+                <option value="terlama">Terlama</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Loading -->
+          <div class="loading" id="loading-state">
+            <p>Memuat data berita...</p>
+          </div>
+
+          <!-- Error -->
+          <div class="error-state hidden" id="error-state">
+            <p>Data berita gagal dimuat. Silakan coba lagi.</p>
+            <button class="btn-retry" id="retry-btn">Coba Lagi</button>
+          </div>
+
+          <!-- News grid -->
+          <div class="news-grid" id="news-grid"></div>
+
+          <!-- Pagination -->
+          <nav class="pagination" id="pagination" aria-label="Navigasi halaman"></nav>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <div class="sidebar-box">
+            <h3 class="sidebar-title">🔥 Berita Terpopuler</h3>
+            <div id="popular-list">
+              <!-- Filled by JS -->
+            </div>
+          </div>
+
+          <div class="sidebar-box">
+            <h3 class="sidebar-title">ℹ️ Tentang</h3>
+            <p style="font-size:0.9rem;color:var(--text-secondary);line-height:1.55;">
+              <strong>Berita Global Terbaru</strong> menyajikan informasi terkini, terpercaya, dan beragam dari Indonesia hingga dunia.
+            </p>
+            <p style="font-size:0.8rem;color:var(--text-muted);margin-top:10px;">
+              Semua berita bertanda [DEMO] adalah contoh untuk demonstrasi sistem.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </main>
+  </div>
+
+  <!-- Detail View (dynamic) -->
+  <div id="detail-view" class="detail-view">
+    <div class="container" style="padding:28px 16px 40px;">
+      <!-- Filled by JS -->
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="logo" style="justify-content:center;">
+        <span class="logo-icon">B</span>
+        <span>Berita Global Terbaru</span>
+      </div>
+      <p>Sajikan informasi terkini, terpercaya, dan beragam dari Indonesia hingga dunia.</p>
+      <p style="margin-top:8px;">&copy; 2026 Berita Global Terbaru. Portal demo.</p>
+    </div>
+  </footer>
+
+  <script src="/js/script.js"></script>
+</body>
+</html>
