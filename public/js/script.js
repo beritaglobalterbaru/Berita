@@ -36,6 +36,36 @@
   const $ = (sel, ctx = document) => ctx.querySelector(sel);
   const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
 
+  // ---------- Prevent pinch / double-tap zoom (mobile app-like) ----------
+  function preventZoom() {
+    document.addEventListener(
+      'gesturestart',
+      (e) => {
+        e.preventDefault();
+      },
+      { passive: false }
+    );
+    document.addEventListener(
+      'gesturechange',
+      (e) => {
+        e.preventDefault();
+      },
+      { passive: false }
+    );
+    let lastTouchEnd = 0;
+    document.addEventListener(
+      'touchend',
+      (e) => {
+        const now = Date.now();
+        if (now - lastTouchEnd <= 300) {
+          e.preventDefault();
+        }
+        lastTouchEnd = now;
+      },
+      { passive: false }
+    );
+  }
+
   // ---------- Theme ----------
   function initTheme() {
     const saved = localStorage.getItem('bgt-theme') || 'light';
@@ -731,6 +761,7 @@
 
   // ---------- Init ----------
   function init() {
+    preventZoom();
     initTheme();
     initMobileMenu();
     initSearchToggle();
