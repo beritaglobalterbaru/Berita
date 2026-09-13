@@ -36,55 +36,30 @@
   const $ = (sel, ctx = document) => ctx.querySelector(sel);
   const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
 
-  // ---------- HP vs Desktop: zoom lock hanya di HP, desktop bebas ----------
-  function isPhoneDevice() {
-    const ua = navigator.userAgent || '';
-    const phoneUA = /Android.+Mobile|iPhone|iPod|webOS|BlackBerry|IEMobile|Opera Mini/i.test(ua);
-    const coarseNarrow =
-      window.matchMedia('(max-width: 820px)').matches &&
-      window.matchMedia('(pointer: coarse)').matches;
-    return phoneUA || coarseNarrow;
-  }
-
-  function applyViewportForDevice() {
-    const meta = document.getElementById('viewport-meta') || document.querySelector('meta[name="viewport"]');
-    if (!meta) return;
-    if (isPhoneDevice()) {
-      // HP: tidak bisa zoom kecilin / perbesar
-      meta.setAttribute(
-        'content',
-        'width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover'
-      );
-    } else {
-      // Desktop: boleh zoom normal, tidak dipaksa ikut sistem HP
-      meta.setAttribute('content', 'width=device-width, initial-scale=1.0, viewport-fit=cover');
-    }
-  }
-
+  // ---------- Prevent pinch / double-tap zoom (mobile app-like) ----------
   function preventZoom() {
-    applyViewportForDevice();
-
-    // Hanya HP — desktop / laptop tidak diubah
-    if (!isPhoneDevice()) return;
-
     document.addEventListener(
-      'touchmove',
+      'gesturestart',
       (e) => {
-        if (e.touches && e.touches.length > 1) e.preventDefault();
+        e.preventDefault();
       },
       { passive: false }
     );
-
-    document.addEventListener('gesturestart', (e) => e.preventDefault(), { passive: false });
-    document.addEventListener('gesturechange', (e) => e.preventDefault(), { passive: false });
-    document.addEventListener('gestureend', (e) => e.preventDefault(), { passive: false });
-
+    document.addEventListener(
+      'gesturechange',
+      (e) => {
+        e.preventDefault();
+      },
+      { passive: false }
+    );
     let lastTouchEnd = 0;
     document.addEventListener(
       'touchend',
       (e) => {
         const now = Date.now();
-        if (now - lastTouchEnd <= 300) e.preventDefault();
+        if (now - lastTouchEnd <= 300) {
+          e.preventDefault();
+        }
         lastTouchEnd = now;
       },
       { passive: false }
@@ -126,14 +101,16 @@
     if (!hamburger || !menu) return;
 
     hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('active');
-      menu.classList.toggle('open');
+      const isOpen = hamburger.classList.toggle('active');
+      menu.classList.toggle('open', isOpen);
+      hamburger.setAttribute('aria-expanded', String(isOpen));
     });
 
     menu.addEventListener('click', (e) => {
       if (e.target.tagName === 'A') {
         hamburger.classList.remove('active');
         menu.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
       }
     });
   }
