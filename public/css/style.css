@@ -81,21 +81,6 @@ body {
   overscroll-behavior-y: none;
 }
 
-/* HP (pointer kasar + layar sempit): blok pinch, tetap boleh scroll */
-/* Desktop / laptop: tidak diubah, bebas zoom browser */
-@media (max-width: 820px) and (pointer: coarse) {
-  html,
-  body {
-    touch-action: pan-x pan-y;
-    -ms-touch-action: pan-x pan-y;
-  }
-}
-
-/* Jangan ikut ukuran font sistem OS secara berlebihan */
-html {
-  -moz-text-size-adjust: 100%;
-}
-
 img {
   max-width: 100%;
   height: auto;
@@ -994,58 +979,42 @@ textarea {
   display: none;
 }
 
-.detail-container {
-  padding: 24px 18px 80px;
-  max-width: 720px;
-}
-
-@media (min-width: 768px) {
-  .detail-container {
-    padding: 32px 24px 60px;
-    max-width: 760px;
-  }
-}
-
 .article-header {
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .article-badge {
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .article-title {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 800;
-  line-height: 1.4;
-  margin-bottom: 14px;
-  letter-spacing: -0.015em;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
+  line-height: 1.28;
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
 }
 
 @media (min-width: 768px) {
   .article-title {
-    font-size: 1.85rem;
-    line-height: 1.35;
+    font-size: 2rem;
   }
 }
 
 .article-meta {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 14px;
-  font-size: 0.85rem;
+  gap: 10px 16px;
+  font-size: 0.88rem;
   color: var(--text-muted);
-  margin-bottom: 20px;
+  margin-bottom: 18px;
   font-weight: 500;
-  line-height: 1.5;
 }
 
 .article-image {
   border-radius: 14px;
   overflow: hidden;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
   background: var(--border);
   max-height: 440px;
   box-shadow: var(--shadow);
@@ -1059,20 +1028,13 @@ textarea {
 }
 
 .article-body {
-  font-size: 1.0625rem;
-  line-height: 1.85;
+  font-size: 1.05rem;
+  line-height: 1.8;
   color: var(--text);
-  letter-spacing: 0.01em;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
 }
 
 .article-body p {
-  margin-bottom: 1.35em;
-}
-
-.article-body p:last-child {
-  margin-bottom: 0;
+  margin-bottom: 1.15em;
 }
 
 .article-body strong {
@@ -1080,20 +1042,18 @@ textarea {
 }
 
 .article-source {
-  margin-top: 32px;
-  padding: 16px 18px;
+  margin-top: 28px;
+  padding: 14px 16px;
   background: var(--bg);
-  border-radius: 12px;
+  border-radius: 10px;
   font-size: 0.9rem;
   color: var(--text-secondary);
   border: 1px solid var(--border);
-  line-height: 1.5;
 }
 
 .article-source a {
   color: var(--primary);
   font-weight: 600;
-  word-break: break-all;
 }
 
 .btn-back {
@@ -1244,297 +1204,291 @@ textarea {
   }
 }
 
-/* ---------- About text ---------- */
-.about-text {
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-  line-height: 1.55;
-}
 
-.about-note {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  margin-top: 10px;
-}
+/* ==========================================================
+   RESPONSIVE FIX — HP otomatis pas, desktop tetap proporsional
+   ========================================================== */
 
-/* ---------- Social links (sidebar) ---------- */
-.social-links {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.social-btn {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 11px 14px;
-  border-radius: 10px;
-  font-size: 0.88rem;
-  font-weight: 600;
-  color: #fff;
-  transition: transform var(--transition), box-shadow var(--transition), opacity var(--transition);
-}
-
-.social-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
-  opacity: 0.95;
-}
-
-.social-btn:active {
-  transform: translateY(0);
-}
-
-.social-icon {
-  width: 28px;
-  height: 28px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
-  font-size: 0.95rem;
-  font-weight: 800;
-  flex-shrink: 0;
-}
-
-.social-tiktok { background: linear-gradient(135deg, #010101 0%, #25f4ee 50%, #fe2c55 100%); }
-.social-ig { background: linear-gradient(135deg, #f58529 0%, #dd2a7b 50%, #8134af 100%); }
-.social-fb { background: linear-gradient(135deg, #1877f2 0%, #0d65d9 100%); }
-.social-x { background: linear-gradient(135deg, #14171a 0%, #000 100%); }
-.social-yt { background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%); }
-.social-web { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); }
-
-[data-theme="dark"] .social-x {
-  background: linear-gradient(135deg, #333 0%, #111 100%);
-  border: 1px solid #444;
-}
-
-/* ---------- WhatsApp button ---------- */
-.sidebar-wa .wa-desc {
-  font-size: 0.85rem;
-  color: var(--text-secondary);
-  line-height: 1.5;
-  margin-bottom: 14px;
-}
-
-.btn-whatsapp {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
+/* Jangan biarkan elemen melebar keluar layar */
+html,
+body {
   width: 100%;
-  padding: 13px 18px;
-  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
-  color: #fff !important;
-  border-radius: 12px;
-  font-weight: 700;
-  font-size: 0.92rem;
-  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);
-  transition: transform var(--transition), box-shadow var(--transition);
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
-.btn-whatsapp:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+body {
+  margin: 0;
 }
 
-.btn-whatsapp:active {
-  transform: translateY(0);
+.container,
+.layout,
+.content-col,
+.sidebar,
+.news-grid,
+.hero-card,
+.card-body,
+.article-body {
+  min-width: 0;
 }
 
-.wa-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
+/* Media/gambar selalu mengikuti lebar parent */
+img,
+video,
+iframe {
+  max-width: 100%;
 }
 
-.btn-whatsapp-footer {
-  width: auto;
-  padding: 12px 22px;
-  font-size: 0.88rem;
-}
+/* HP kecil: 320–767px */
+@media (max-width: 767px) {
+  .container {
+    width: 100%;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
 
-/* ---------- Footer enhanced ---------- */
-.site-footer {
-  background: var(--bg-header);
-  border-top: 1px solid var(--border);
-  padding: 36px 0 96px;
-  margin-top: auto;
-  text-align: center;
-  color: var(--text-muted);
-  font-size: 0.85rem;
-}
+  .header-inner {
+    min-height: 58px;
+    height: auto;
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
 
-@media (min-width: 768px) {
-  .site-footer {
-    padding-bottom: 40px;
+  .logo {
+    min-width: 0;
+    max-width: calc(100% - 96px);
+    gap: 8px;
+    font-size: 0.9rem;
+  }
+
+  .logo span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .header-actions {
+    flex-shrink: 0;
+  }
+
+  .btn-icon,
+  .hamburger {
+    width: 40px;
+    height: 40px;
+  }
+
+  .breaking-news {
+    height: 36px;
+  }
+
+  .breaking-label {
+    padding: 0 10px;
+    font-size: 0.66rem;
+  }
+
+  .ticker {
+    gap: 24px;
+    animation-duration: 38s;
+  }
+
+  .ticker a {
+    font-size: 0.78rem;
+  }
+
+  .hero {
+    padding: 12px 0 6px;
+  }
+
+  .hero-card {
+    border-radius: 12px;
+  }
+
+  .hero-image {
+    min-height: 190px;
+    aspect-ratio: 16 / 9;
+  }
+
+  .hero-content {
+    padding: 16px 14px 18px;
+    gap: 8px;
+  }
+
+  .hero-title {
+    font-size: 1.18rem;
+  }
+
+  .hero-summary {
+    font-size: 0.86rem;
+  }
+
+  .main-content {
+    padding: 12px 0 36px;
+  }
+
+  .layout {
+    gap: 18px;
+  }
+
+  .section-title {
+    font-size: 1.1rem;
+  }
+
+  .category-filters {
+    margin-left: -12px;
+    margin-right: -12px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .sort-row {
+    align-items: stretch;
+  }
+
+  .results-info {
+    width: 100%;
+  }
+
+  .sort-select {
+    width: 100%;
+    min-height: 44px;
+  }
+
+  .news-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .news-card {
+    width: 100%;
+    min-width: 0;
+    border-radius: 12px;
+  }
+
+  .card-image {
+    aspect-ratio: 16 / 9;
+  }
+
+  .card-body {
+    padding: 13px 13px 15px;
+  }
+
+  .card-title {
+    font-size: 0.98rem;
+  }
+
+  .card-summary {
+    font-size: 0.82rem;
+  }
+
+  .pagination {
+    gap: 5px;
+    margin-top: 20px;
+  }
+
+  .page-btn {
+    min-width: 42px;
+    padding-left: 8px;
+    padding-right: 8px;
+    font-size: 0.8rem;
+  }
+
+  /* Tombol Sebelumnya/Berikutnya tidak memaksa layar melebar */
+  .page-btn[data-page="prev"],
+  .page-btn[data-page="next"] {
+    flex: 1 1 auto;
+    max-width: 150px;
+  }
+
+  .sidebar-box {
+    padding: 14px;
+  }
+
+  .article-title {
+    font-size: 1.35rem;
+    overflow-wrap: anywhere;
+  }
+
+  .article-body {
+    font-size: 1rem;
+    overflow-wrap: anywhere;
+  }
+
+  .article-image,
+  .article-image img {
+    max-height: none;
+  }
+
+  .article-source {
+    overflow-wrap: anywhere;
+  }
+
+  .mobile-menu {
+    max-height: calc(100dvh - 58px);
+    overflow-y: auto;
   }
 }
 
-.footer-inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 22px;
-}
-
-.footer-brand .logo {
-  justify-content: center;
-  margin-bottom: 8px;
-  font-size: 1rem;
-}
-
-.footer-tagline {
-  max-width: 420px;
-  line-height: 1.55;
-  color: var(--text-secondary);
-  font-size: 0.88rem;
-}
-
-.footer-social-label {
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
-  color: var(--text-muted);
-  margin-bottom: 12px;
-}
-
-.footer-social-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-}
-
-.footer-soc {
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  transition: transform var(--transition), box-shadow var(--transition);
-}
-
-.footer-soc:hover {
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: var(--shadow-md);
-}
-
-.footer-tiktok { background: #010101; }
-.footer-ig { background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af); }
-.footer-fb { background: #1877f2; }
-.footer-x { background: #000; }
-.footer-yt { background: #ff0000; }
-.footer-web { background: var(--primary); }
-
-[data-theme="dark"] .footer-tiktok,
-[data-theme="dark"] .footer-x {
-  background: #1e293b;
-  border: 1px solid #334155;
-}
-
-.footer-copy {
-  margin-top: 4px;
-  font-size: 0.8rem;
-  color: var(--text-muted);
-}
-
-/* ---------- Floating WhatsApp ---------- */
-.wa-float {
-  position: fixed;
-  bottom: 22px;
-  right: 18px;
-  z-index: 999;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  text-decoration: none;
-}
-
-.wa-float:hover {
-  transform: scale(1.08);
-  box-shadow: 0 6px 28px rgba(37, 211, 102, 0.6);
-}
-
-.wa-float:active {
-  transform: scale(0.96);
-}
-
-.wa-float-pulse {
-  position: absolute;
-  inset: -4px;
-  border-radius: 50%;
-  border: 2px solid #25d366;
-  animation: wa-pulse 2s ease-out infinite;
-  pointer-events: none;
-}
-
-@keyframes wa-pulse {
-  0% { transform: scale(1); opacity: 0.7; }
-  70% { transform: scale(1.35); opacity: 0; }
-  100% { transform: scale(1.35); opacity: 0; }
-}
-
-.wa-float-label {
-  position: absolute;
-  right: 68px;
-  background: #111827;
-  color: #fff;
-  font-size: 0.78rem;
-  font-weight: 700;
-  padding: 7px 12px;
-  border-radius: 8px;
-  white-space: nowrap;
-  opacity: 0;
-  transform: translateX(8px);
-  transition: opacity 0.2s ease, transform 0.2s ease;
-  pointer-events: none;
-  box-shadow: var(--shadow);
-}
-
-.wa-float-label::after {
-  content: '';
-  position: absolute;
-  right: -5px;
-  top: 50%;
-  transform: translateY(-50%);
-  border: 5px solid transparent;
-  border-left-color: #111827;
-}
-
-.wa-float:hover .wa-float-label {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-@media (max-width: 480px) {
-  .wa-float {
-    bottom: 18px;
-    right: 14px;
-    width: 56px;
-    height: 56px;
+/* HP sangat kecil */
+@media (max-width: 359px) {
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
   }
-  .wa-float-label {
-    display: none;
+
+  .logo {
+    font-size: 0.82rem;
+    max-width: calc(100% - 90px);
+  }
+
+  .header-actions {
+    gap: 0;
+  }
+
+  .btn-icon,
+  .hamburger {
+    width: 36px;
+    height: 36px;
+  }
+
+  .hero-title {
+    font-size: 1.08rem;
+  }
+
+  .breaking-label {
+    padding: 0 7px;
   }
 }
 
-@supports (padding: max(0px)) {
-  .wa-float {
-    bottom: max(22px, env(safe-area-inset-bottom));
-    right: max(18px, env(safe-area-inset-right));
+/* Tablet: manfaatkan lebar layar tanpa membuat konten terlalu besar */
+@media (min-width: 768px) and (max-width: 959px) {
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .news-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Desktop: kolom selalu tetap berada di dalam viewport */
+@media (min-width: 960px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr) minmax(260px, 300px);
+  }
+
+  .content-col,
+  .sidebar {
+    min-width: 0;
+  }
+
+  .news-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1200px) {
+  .news-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
