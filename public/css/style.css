@@ -81,13 +81,19 @@ body {
   overscroll-behavior-y: none;
 }
 
-/* HP saja: blok pinch-zoom, tetap boleh scroll */
-@media (max-width: 1024px) {
+/* HP (pointer kasar + layar sempit): blok pinch, tetap boleh scroll */
+/* Desktop / laptop: tidak diubah, bebas zoom browser */
+@media (max-width: 820px) and (pointer: coarse) {
   html,
   body {
     touch-action: pan-x pan-y;
     -ms-touch-action: pan-x pan-y;
   }
+}
+
+/* Jangan ikut ukuran font sistem OS secara berlebihan */
+html {
+  -moz-text-size-adjust: 100%;
 }
 
 img {
