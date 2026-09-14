@@ -78,7 +78,7 @@ body {
   transition: background var(--transition), color var(--transition);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overscroll-behavior-y: none;
+  overscroll-behavior-y: auto;
 }
 
 img {
@@ -1491,4 +1491,37 @@ iframe {
   .news-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+}
+
+
+/* ==========================================================
+   FINAL TOUCH FIX — scroll vertikal normal dengan 1 jari
+   ========================================================== */
+html,
+body {
+  touch-action: pan-y pinch-zoom;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: auto;
+  overscroll-behavior-y: auto;
+}
+
+/* Elemen konten mengikuti gesture halaman, bukan menangkap 2 jari. */
+main,
+header,
+footer,
+section,
+article,
+.hero-card,
+.news-card,
+.card-body,
+.article-body,
+.content-col,
+.sidebar {
+  touch-action: pan-y pinch-zoom;
+}
+
+/* Hanya area yang memang horizontal yang boleh di-scroll horizontal. */
+.nav-desktop,
+.category-filters {
+  touch-action: pan-x;
 }
