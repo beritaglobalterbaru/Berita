@@ -1525,3 +1525,59 @@ article,
 .category-filters {
   touch-action: pan-x;
 }
+
+/* ---------- Perapian artikel di halaman detail ---------- */
+.detail-view > .container > article {
+  width: 100%;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.detail-view .article-header,
+.detail-view .article-image,
+.detail-view .article-source {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.detail-view .article-body {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 4px;
+  box-sizing: border-box;
+  font-size: 1.05rem;
+  line-height: 1.78;
+  letter-spacing: 0;
+  overflow-wrap: break-word;
+  word-break: normal;
+  text-align: left;
+}
+
+.detail-view .article-body p {
+  margin: 0 0 1.35em;
+}
+
+@media (max-width: 767px) {
+  .detail-view > .container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .detail-view > .container > article {
+    max-width: 100%;
+  }
+
+  .detail-view .article-body {
+    max-width: 680px;
+    padding-left: 2px;
+    padding-right: 2px;
+    font-size: 1rem;
+    line-height: 1.78;
+  }
+
+  .detail-view .article-body p {
+    margin-bottom: 1.45em;
+  }
+}
