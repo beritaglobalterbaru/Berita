@@ -1,6 +1,6 @@
 /* ============================================
    Berita Global Terbaru — Professional News Portal
-   Premium look · Mobile-first · Natural touch scrolling
+   Premium look · Mobile-first · No pinch-zoom-out
    ============================================ */
 
 :root {
@@ -65,7 +65,7 @@ html {
   font-size: 16px;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
-  touch-action: auto;
+  touch-action: pan-y;
 }
 
 body {
