@@ -15,7 +15,6 @@
     "popular": true
   },
   {
-  {
   "id": 2,
   "judul": "Gempa M 5,2 Guncang Wilayah Tenggara Kabupaten Malang",
   "slug": "gempa-m-52-guncang-wilayah-tenggara-kabupaten-malang",
@@ -29,7 +28,7 @@
   "sumber": "beritaglobal.my.id",
   "urlSumber": "",
   "popular": true
-},
+ },
   {
     "id": 3,
     "judul": "[DEMO] Kebijakan Ekonomi Baru Diumumkan Pemerintah",
