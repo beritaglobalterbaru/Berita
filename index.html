@@ -30,6 +30,42 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📰</text></svg>">
 
   <link rel="stylesheet" href="/css/style.css">
+  <style>
+    /* Adsterra: satu unit saja agar halaman tetap rapi dan tidak terasa spam */
+    .ad-section {
+      width: 100%;
+      max-width: 1200px;
+      margin: 18px auto 6px;
+      padding: 0 16px;
+      box-sizing: border-box;
+    }
+    .ad-label {
+      font-size: 10px;
+      letter-spacing: .08em;
+      color: #888;
+      text-align: center;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+    }
+    .ad-container {
+      width: 100%;
+      min-height: 70px;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    @media (max-width: 600px) {
+      .ad-section {
+        margin-top: 12px;
+        padding: 0 10px;
+      }
+      .ad-container {
+        min-height: 60px;
+      }
+    }
+  </style>
+
 </head>
 <body>
   <!-- Header -->
@@ -105,6 +141,16 @@
       </div>
     </section>
 
+
+    <!-- Iklan Native Adsterra — ditempatkan secara natural, tidak spam -->
+    <section class="ad-section" aria-label="Iklan">
+      <div class="ad-label">IKLAN</div>
+      <div class="ad-container">
+        <script async="async" data-cfasync="false" src="https://pl31342050.profitableratecpmnetwork.com/767ccb111984ee36d3fb63103c02d818/invoke.js"></script>
+        <div id="container-767ccb111984ee36d3fb63103c02d818"></div>
+      </div>
+    </section>
+
     <!-- Main -->
     <main class="main-content">
       <div class="container layout">
@@ -159,7 +205,7 @@
               <strong>Berita Global Terbaru</strong> menyajikan informasi terkini, terpercaya, dan beragam dari Indonesia hingga dunia.
             </p>
             <p style="font-size:0.8rem;color:var(--text-muted);margin-top:10px;">
-              Berita yang ditampilkan berasal dari sumber informasi terpercaya dan disajikan berdasarkan data yang tersedia.
+              Semua berita bertanda [DEMO] adalah contoh untuk demonstrasi sistem.
             </p>
           </div>
         </aside>
@@ -182,7 +228,7 @@
         <span>Berita Global Terbaru</span>
       </div>
       <p>Sajikan informasi terkini, terpercaya, dan beragam dari Indonesia hingga dunia.</p>
-      <p style="margin-top:8px;">&copy; 2026 Berita Global Terbaru. Informasi terkini dari sumber terpercaya.</p>
+      <p style="margin-top:8px;">&copy; 2026 Berita Global Terbaru. Portal demo.</p>
     </div>
   </footer>
 
