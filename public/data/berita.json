@@ -75,19 +75,19 @@
   "popular": false
 },
   {
-    "id": 6,
-    "judul": "[DEMO] Tren Gaya Hidup Sehat Meningkat di Kalangan Generasi Muda",
-    "slug": "tren-gaya-hidup-sehat-meningkat-di-kalangan-generasi-muda",
-    "kategori": "Lifestyle",
-    "tanggal": "2026-09-10",
-    "waktu": "08:00",
-    "penulis": "Berita Global Terbaru",
-    "gambar": "/images/berita6.jpg",
-    "ringkasan": "DEMO: Artikel fiktif tentang tren lifestyle sehat. Untuk pengujian filter dan search.",
-    "isi": "<p><strong>BERITA DEMO</strong> — Konten demonstrasi.</p><p>Semakin banyak anak muda yang mengadopsi pola makan seimbang, olahraga rutin, dan manajemen stres.</p><p>Platform digital dan komunitas lokal berperan besar dalam menyebarkan informasi gaya hidup sehat.</p><p>Para ahli menyarankan pendekatan yang realistis dan berkelanjutan.</p>",
-    "sumber": "DEMO - Portal Internal",
-    "urlSumber": "",
-    "popular": false
+  "id": 7,
+  "judul": "Sound Horeg di Jember Bakal Punya Aturan Khusus",
+  "slug": "sound-horeg-di-jember-bakal-punya-aturan-khusus",
+  "kategori": "Jember",
+  "tanggal": "2026-09-28",
+  "waktu": "16:00",
+  "penulis": "Berita Global Terbaru",
+  "gambar": "/images/berita7.jpg",
+  "ringkasan": "Penggunaan sound horeg di Kabupaten Jember bakal diatur melalui Raperda tentang Ketertiban Umum dan Ketenteraman Masyarakat.",
+  "isi": "<p>Fenomena penggunaan sound horeg di Kabupaten Jember bakal memiliki aturan khusus melalui Rancangan Peraturan Daerah (Raperda) tentang Ketertiban Umum dan Ketenteraman Masyarakat.</p><p>Badan Pembentukan Peraturan Daerah (Bapemperda) DPRD Jember tengah membahas sejumlah ketentuan terkait penggunaan pengeras suara berdaya tinggi tersebut.</p><p>Beberapa poin yang diproyeksikan masuk dalam pembahasan meliputi batas tingkat intensitas suara, penentuan lokasi atau zonasi kegiatan, hingga pembatasan jam operasional hiburan di ruang publik.</p><p>DPRD menegaskan aturan tersebut bukan untuk melarang hiburan rakyat, melainkan mengatur agar kegiatan tetap berjalan tanpa mengganggu ketertiban dan keselamatan masyarakat.</p>",
+  "sumber": "Berita Global Terbaru",
+  "urlSumber": "",
+  "popular": false
   },
   {
     "id": 7,
